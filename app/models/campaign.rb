@@ -205,10 +205,6 @@ class Campaign < ActiveRecord::Base
     save!
   end
 
-  def moderated?
-    moderated == true ? true : false
-  end
-
   def published?
     ! moderated?
   end
