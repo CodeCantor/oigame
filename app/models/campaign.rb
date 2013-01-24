@@ -335,9 +335,7 @@ class Campaign < ActiveRecord::Base
 
   def participants_list
     recipients = self.messages.map {|m| m.email}.sort.uniq
-    response = ""
-    recipients.each {|r| response += r + "\n" }
-    return response
+    recipients.join('\n') + '\n'
   end
 
   private
