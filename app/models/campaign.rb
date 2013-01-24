@@ -210,7 +210,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def published?
-    moderated == false ? true : false
+    ! moderated?
   end
 
   def stats
