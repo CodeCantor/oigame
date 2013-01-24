@@ -4,7 +4,7 @@ class Fax < ActiveRecord::Base
 
   belongs_to :campaign, :counter_cache => true
 
-  scope :validated, where(:validated => true)
+  scope :validated, -> { where(:validated => true) }
 
   validates_presence_of :email
   # generar método que valie tu un remitente no puede unirse
