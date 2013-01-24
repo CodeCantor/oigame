@@ -379,6 +379,4 @@ class Campaign < ActiveRecord::Base
       errors.add :image, "debe tener 500px de ancho y 200px de largo como mínimo" 
     end
   end
-
-
 end
