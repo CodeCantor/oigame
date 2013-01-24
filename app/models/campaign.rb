@@ -292,7 +292,7 @@ class Campaign < ActiveRecord::Base
 
   def has_participated?(user)
     # comprobamos si este usuario ya ha participado en este campaña
-    if defined? user.email
+    if user.try(:email)
       participants_emails = self.participants.map {|x| x.email}
       participants_emails.include? user.email
     end
